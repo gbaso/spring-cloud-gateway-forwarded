@@ -9,9 +9,9 @@
     <version>4.1.0</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.github.gbaso.gateway</groupId>
+  <groupId>io.github.gbaso.gateway</groupId>
   <artifactId>edge</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1</version>
   <name>edge</name>
   <description>edge</description>
   <url />
