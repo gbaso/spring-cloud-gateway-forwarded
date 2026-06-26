@@ -1,6 +1,21 @@
 server:
   port: 8081
+  shutdown: immediate
 
 spring:
   application:
     name: internal
+  cloud:
+    gateway:
+      server:
+        webflux:
+          trusted-proxies: .*
+          forwarded:
+            enabled: false
+          x-forwarded:
+            enabled: false
+          routes:
+            - id: redirect
+              uri: http://localhost:8082
+              predicates:
+                - Path=/redirect

@@ -1,6 +1,21 @@
 server:
   port: 8080
+  shutdown: immediate
 
 spring:
   application:
     name: edge
+  cloud:
+    gateway:
+      server:
+        webflux:
+          trusted-proxies: .*
+          forwarded:
+            enabled: true
+          x-forwarded:
+            enabled: true
+          routes:
+            - id: redirect
+              uri: http://localhost:8081
+              predicates:
+                - Path=/redirect
